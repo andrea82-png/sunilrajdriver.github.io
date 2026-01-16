@@ -1,1 +1,175 @@
-prova
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+  --bg: #ecfeff;
+  --panel: #f0fdf4;
+  --accent: #22c55e;
+  --accent-2: #eab308;
+  --whatsapp: #16a34a;
+  --text: #14532d;
+  --muted: #4d7c0f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+  background: linear-gradient(135deg, #ecfeff, #fefce8);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.wrapper {
+  max-width: 900px;
+  width: 100%;
+  background: var(--panel);
+  border-radius: 20px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 0 30px 60px rgba(20,83,45,.25);
+}
+
+/* LEFT PHOTO */
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* RIGHT CONTENT */
+.content {
+  padding: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.presentation {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: #ffffff;
+  border: 2px solid #bbf7d0;
+  border-radius: 14px;
+  color: var(--text);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #65a30d;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.actions {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+button, .whatsapp {
+  padding: 14px;
+  border-radius: 16px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+}
+
+button {
+  background: linear-gradient(135deg, #22c55e, #4ade80);
+  color: #052e16;
+}
+
+.whatsapp {
+  background: linear-gradient(135deg, #facc15, #fde047);
+  color: #713f12;
+  text-decoration: none;
+  text-align: center;
+}
+
+button:hover, .whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(20,83,45,.25);
+  opacity: .95;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .photo {
+    height: 260px;
+  }
+
+  .content {
+    padding: 26px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <!-- LEFT PHOTO -->
+  <div class="photo">
+    <img src=front.jpg" alt="Presentation photo">
+  </div>
+
+  <!-- RIGHT CONTENT -->
+  <div class="content">
+
+    <div class="presentation">
+      My name is Sunil. I have been working as a tourist driver in Delhi for the past 20 years, and I have extensive experience driving in Uttar Pradesh, Rajasthan, Uttarakhand, and Himachal Pradesh.
+    </div>
+
+    <input type="text" id="name" placeholder="Your name">
+    <input type="email" id="email" placeholder="Your email">
+    <textarea id="message" placeholder="Your message"></textarea>
+
+    <div class="actions">
+      <button onclick="sendEmail()">Send Email</button>
+
+      <a class="whatsapp"
+         href="https://wa.me/1234567890"
+         target="_blank">
+        Open WhatsApp
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
+</body>
+</html>
+
